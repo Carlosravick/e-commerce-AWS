@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Carrinho</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    
+    <header>
+        <div class="header-content">
+            <div class="header-left">
+                <a href="../index.html">
+                    <img src="../assets/logo.png" alt="Logo da Loja Escola da Nuvem" class="logo">
+                </a>
+            </div>
+            <div class="header-center">
+                <nav class="navbar">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="../index.html#produtos-container" class="nav-link">Todos os Produtos</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-right">
+                <a href="./revisar-pedido.html" class="cart-icon" aria-label="Ver carrinho de compras">
+                    🛒<span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="cart-page-container">
+            <h1>Meu Carrinho</h1>
+            
+            <div id="limpar-carrinho-container"></div>
+
+            <div id="resumo-pedido"></div>
+            <div id="total-container"></div>
+            <div id="finalizar-container"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Loja Compra já</p>
+    </footer>
+
+    <script src="../js/revisar-pedido.js"></script>
+</body>
+</html>

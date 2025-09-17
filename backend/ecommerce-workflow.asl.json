@@ -1,0 +1,53 @@
+{
+ "Comment": "Fluxo de pagamento",
+ "StartAt": "Aguarda Pagamento",
+ "States": {
+  "Aguarda Pagamento": {
+   "Type": "Task",
+   "Resource": "arn:aws:states:::lambda:invoke.waitForTaskToken",
+   "Parameters": {
+    "FunctionName": "arn:aws:lambda:<REGIAO>:<ID_CONTA>:function:edn-ecommerce-<NOME>-<SOBRENOME>-aguarda-pagamento:$LATEST",
+    "Payload": {
+     "pedidoId.$": "$.pedidoId",
+     "taskToken.$": "$$.Task.Token",
+     "produtos.$": "$.produtos",
+     "total.$": "$.total"
+    }
+   },
+   "Next": "Verifica Fraude"
+  },
+  "Verifica Fraude": {
+   "Type": "Choice",
+   "Choices": [
+    {
+     "Variable": "$.status",
+     "StringEquals": "pago",
+     "Next": "Finaliza Pedido"
+    }
+   ],
+   "Default": "Notifica Fraude"
+  },
+  "Notifica Fraude": {
+   "Type": "Task",
+   "Resource": "arn:aws:states:::sns:publish",
+   "Parameters": {
+    "Message.$": "$",
+    "TopicArn": "arn:aws:sns:<REGIAO>:<ID_CONTA>:edn-ecommerce-<NOME>-<SOBRENOME>-fraudes"
+   },
+   "ResultPath": "$.snsResponse",
+   "Next": "Finaliza Pedido"
+  },
+  "Finaliza Pedido": {
+   "Type": "Task",
+   "Resource": "arn:aws:lambda:<REGIAO>:<ID_CONTA>:function:edn-ecommerce-<NOME>-<SOBRENOME>-finaliza-pedido:$LATEST",
+   "Parameters": {
+    "pedidoId.$": "$.pedidoId",
+    "produtos.$": "$.produtos",
+    "total.$": "$.total",
+    "status.$": "$.status",
+    "motivo.$": "$.motivo"
+   },
+   "End": true
+  }
+ }
+}

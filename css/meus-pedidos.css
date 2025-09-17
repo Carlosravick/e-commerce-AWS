@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+
+body, h1, h2, h3, h4, h5, h6, p, button, div, span, a {
+  font-family: 'Fredoka', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#lista-pedidos {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.card-pedido {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #573090;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.4s ease forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-pedido:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card-pedido h3 {
+  margin-top: 0;
+  color: #573090;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.card-pedido h3::before {
+  content: "📦 ";
+  margin-right: 0.5rem;
+}
+
+.card-pedido p {
+  margin: 0.3rem 0;
+  color: #333;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.card-pedido ul {
+  padding-left: 1.2rem;
+  margin: 0.8rem 0 0;
+  color: #444;
+  list-style-type: disc;
+  text-align: left;
+  margin-left: 1rem;
+  width: 100%;
+}
+
+.card-pedido ul li {
+  margin-bottom: 4px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+.status {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.status.pago {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status.pendente {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.card-pedido .total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .card-pedido {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .card-pedido h3 {
+    font-size: 1.1rem;
+  }
+
+  .card-pedido ul {
+    padding-left: 1rem;
+  }
+
+  #lista-pedidos {
+    padding: 0 0.5rem;
+  }
+}
+
+.novo-pedido-btn {
+  display: block;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background: #de5c25;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.novo-pedido-btn:hover {
+  background: #28a437;
+}
+
+.status {
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.status.pago {
+  color: #155724;
+  background-color: #d4edda;
+}
+
+.status.cancelado {
+  color: #721c24;
+  background-color: #f8d7da;
+}

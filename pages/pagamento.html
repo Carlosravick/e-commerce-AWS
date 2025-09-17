@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Pagamento</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-left">
+                <a href="../index.html"><img src="../assets/logo.png" alt="Logo" class="logo"></a>
+            </div>
+            <div class="header-center">
+                <nav class="navbar">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="../index.html#produtos-container" class="nav-link">Produtos</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-right">
+                <a href="./revisar-pedido.html" class="cart-icon" aria-label="Ver carrinho de compras">
+                    🛒<span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="pagamento-container">
+        <div class="payment-container">
+            <h1>Finalizar Pagamento</h1>
+            <div class="order-summary">
+                <p>Total a pagar para o Pedido <strong id="pedido-id-display">#...</strong>:</p>
+                <span>R$ <strong id="total-display">0,00</strong></span>
+            </div>
+            <form id="payment-form" class="formulario-pagamento">
+                <div class="form-group">
+                    <label for="nome">Nome no Cartão</label>
+                    <input type="text" id="nome" required placeholder="Seu nome completo">
+                </div>
+
+                <div class="form-group">
+                    <label for="card-element">Dados do Cartão de Crédito</label>
+                    <div id="card-element"></div>
+                </div>
+
+                <div id="card-errors" role="alert"></div>
+
+                <button type="submit" id="pay-button">Pagar Agora</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Loja Compra já</p>
+    </footer>
+
+    <script src="../js/pagamento.js"></script>
+</body>
+</html>

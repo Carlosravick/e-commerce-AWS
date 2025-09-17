@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja - Produtos</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-left">
+                <a href="./index.html">
+                    <img src="./assets/logo.png" alt="Logo da Loja" class="logo">
+                </a>
+            </div>
+            <div class="header-center">
+                <nav class="navbar">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="./index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="./index.html#produtos-container" class="nav-link">Todos os Produtos</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-right">
+                <a href="./pages/revisar-pedido.html" class="cart-icon" aria-label="Ver carrinho de compras">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="main-title">Nossos Produtos</h1>
+        <div id="produtos-container">
+            </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Loja Compra já</p>
+    </footer>
+
+    <script src="./js/produto.js"></script>
+</body>
+</html>

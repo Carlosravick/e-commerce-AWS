@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka&display=swap");
+
+/* Corrige o estouro dos elementos com padding + border */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, button, div, span, a {
+  font-family: "Fredoka", sans-serif;
+}
+
+.formulario-pagamento {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formulario-pagamento label {
+  display: block;
+  margin-top: 1.25rem;
+  font-weight: bold;
+}
+
+.formulario-pagamento input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.formulario-pagamento button {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-pagamento button:hover {
+  background-color: #218838;
+}
+
+.sucesso {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 1rem;
+  border-left: 5px solid #28a745;
+  border-radius: 8px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .formulario-pagamento {
+    max-width: 95%;
+    padding: 1rem;
+  }
+
+  .formulario-pagamento input,
+  .formulario-pagamento button {
+    font-size: 1.1rem;
+    padding: 0.75rem;
+  }
+}

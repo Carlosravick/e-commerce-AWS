@@ -1,0 +1,270 @@
+/* ======================================== */
+/* FONTES E ESTILOS GERAIS                  */
+/* ======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #495057;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ======================================== */
+/* CABEÇALHO DEFINITIVO (3 COLUNAS)         */
+/* ======================================== */
+header {
+    background-color: #ffffff;
+    padding: 0 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 70px;
+}
+
+.header-left, .header-center, .header-right {
+    flex: 1;
+}
+.header-left { display: flex; justify-content: flex-start; }
+.header-center { display: flex; justify-content: center; }
+.header-right { display: flex; justify-content: flex-end; }
+
+.logo {
+    max-height: 40px;
+    display: block;
+}
+
+.navbar .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #495057;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom-color 0.3s;
+}
+.nav-link:hover {
+    color: #007bff;
+    border-bottom-color: #007bff;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #495057;
+}
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* ======================================== */
+/* CONTEÚDO PRINCIPAL E PRODUTOS            */
+/* ======================================== */
+main {
+    flex-grow: 1;
+    padding: 40px 20px;
+}
+.main-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #343a40;
+    margin-bottom: 40px;
+}
+#produtos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 320px));
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.produto-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.produto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+.produto-imagem {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    padding: 10px;
+}
+.produto-info {
+    padding: 20px;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.produto-titulo { font-size: 1.1rem; font-weight: 600; color: #343a40; }
+.produto-descricao { font-size: 0.85rem; color: #6c757d; margin: 8px 0; flex-grow: 1; }
+.produto-preco { font-size: 1.3rem; font-weight: 700; color: #28a745; margin-bottom: 15px; }
+.btn-comprar { width: calc(100% - 40px); margin: 0 20px 20px 20px; background-color: #007bff; color: white; border: none; padding: 12px; border-radius: 5px; cursor: pointer; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; transition: background-color 0.3s; }
+.btn-comprar:hover { background-color: #0056b3; }
+
+
+/* ======================================== */
+/* PÁGINA DO CARRINHO (REVISAR-PEDIDO)      */
+/* ======================================== */
+.cart-page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+.cart-page-container h1 { text-align: center; margin-bottom: 35px; color: #2c3e50; font-size: 2rem; }
+.cart-item { display: flex; align-items: center; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #f0f0f0; }
+.cart-item:last-child { border-bottom: none; margin-bottom: 0; }
+.cart-item img { width: 90px; height: 90px; object-fit: cover; border-radius: 8px; margin-right: 20px; }
+.item-details { flex-grow: 1; }
+.item-details h2 { font-size: 1.2rem; margin: 0 0 8px 0; color: #34495e; }
+.item-details p { margin: 0; font-size: 1.1rem; font-weight: 600; color: #333; }
+.cart-total { text-align: right; margin-top: 30px; font-size: 1.8rem; font-weight: bold; color: #2c3e50; }
+#finalizar-pedido { display: block; width: 100%; padding: 18px; margin-top: 25px; background-color: #2ecc71; color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; text-transform: uppercase; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease; }
+#finalizar-pedido:hover { background-color: #27ae60; transform: translateY(-2px); }
+#limpar-carrinho-btn { display: block; width: fit-content; margin: -25px 0 30px auto; background-color: transparent; color: #e74c3c; border: 1px solid #e74c3c; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 0.9rem; font-weight: 600; transition: background-color 0.3s, color 0.3s; }
+#limpar-carrinho-btn:hover { background-color: #e74c3c; color: white; }
+
+
+/* ======================================== */
+/* PÁGINA DE CONFIRMAÇÃO (PEDIDO.HTML)      */
+/* ======================================== */
+.pedido-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+.pedido-container h1 { text-align: center; color: #2c3e50; margin-bottom: 10px; }
+.pedido-container .subtitulo { text-align: center; color: #6c757d; margin-bottom: 30px; }
+.resumo-pedido-card { background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 25px; text-align: left; }
+.resumo-pedido-card p { margin-bottom: 15px; }
+.resumo-pedido-card .produto-item { display: flex; justify-content: space-between; font-size: 1rem; padding: 10px 0; border-bottom: 1px solid #dee2e6; }
+.resumo-pedido-card .produto-item:last-of-type { border-bottom: none; }
+.resumo-pedido-card .total { display: flex; justify-content: space-between; font-size: 1.3rem; font-weight: 700; text-align: right; margin-top: 20px; padding-top: 20px; border-top: 2px solid #ced4da; }
+.resumo-pedido-card .status { margin-top: 20px; font-weight: 500; color: #495057; text-align: center; }
+#btn-pagamento { width: 100%; padding: 15px; margin-top: 30px; background-color: #007bff; color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; text-transform: uppercase; transition: background-color 0.3s; }
+#btn-pagamento:hover { background-color: #0056b3; }
+
+
+/* ======================================== */
+/* PÁGINA DE PAGAMENTO                      */
+/* ======================================== */
+.payment-container { max-width: 500px; margin: 40px auto; padding: 40px; background-color: white; border-radius: 12px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); }
+.payment-container h1 { text-align: center; margin-bottom: 25px; color: #2c3e50; }
+.order-summary { background-color: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 30px; }
+.order-summary p { margin: 0; color: #6c757d; }
+.order-summary span { font-size: 2rem; font-weight: 700; color: #2c3e50; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #495057; }
+.form-group input { width: 100%; padding: 12px; border: 1px solid #ced4da; border-radius: 5px; font-size: 1rem; font-family: 'Poppins', sans-serif; }
+.form-row { display: flex; gap: 20px; }
+#pay-button { width: 100%; padding: 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background-color 0.3s; }
+#pay-button:hover { background-color: #0056b3; }
+#pay-button:disabled { background-color: #6c757d; cursor: not-allowed; }
+
+
+/* ======================================== */
+/* RODAPÉ                                   */
+/* ======================================== */
+footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+
+/* ================================================= */
+/* ESTILOS PARA AS PÁGINAS DE STATUS DO PAGAMENTO    */
+/* (Substitua a seção 'PÁGINA DE SUCESSO' por esta) */
+/* ================================================= */
+
+.processing-container,
+.success-container,
+.error-container {
+    /* Centralização com Flexbox */
+    display: flex;
+    flex-direction: column;   /* Empilha os itens verticalmente */
+    justify-content: center;  /* Centraliza na vertical */
+    align-items: center;      /* Centraliza na horizontal */
+    text-align: center;       /* Garante que o texto dentro dos itens também seja centralizado */
+
+    /* Estilos visuais consistentes */
+    max-width: 600px;
+    min-height: 350px; /* Altura mínima para ficar bonito */
+    margin: 60px auto;
+    padding: 50px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.success-container h1 {
+    color: #2ecc71; /* Verde sucesso */
+}
+
+.error-container h1 {
+    color: #e74c3c; /* Vermelho erro */
+}
+
+.processing-container h1,
+.success-container h1,
+.error-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.processing-container p,
+.success-container p,
+.error-container p {
+    font-size: 1.1rem;
+    color: #495057;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
